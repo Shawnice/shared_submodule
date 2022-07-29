@@ -12,6 +12,6 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: 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
+          token: ${{ secrets.MY_PAT }}
           repository: Shawnice/sample-microservice
           event-type: sync-shared-submodules
