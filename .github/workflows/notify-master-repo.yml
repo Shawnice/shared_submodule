@@ -1,0 +1,17 @@
+name: Send repository_dispatch event to master repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-master-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: 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
+          repository: Shawnice/sample-microservice
+          event-type: sync-shared-submodules
